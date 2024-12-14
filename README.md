@@ -1,0 +1,2 @@
+Infinite chess turing completeness proofs.
+Major thanks to [cp4space](https://cp4space.hatsya.com/2013/04/03/circuitry-in-3d-chess/) for initial work on 3d chess TC, as well as members of the [infinite chess discord server](https://discord.gg/mJQQftHcU9) including [TODO: list of names].
