@@ -188,13 +188,13 @@ Auxiliary kings are used to keep track of internal state ensuring this all happe
 Decrementing is the same thing in a different order. 
 
 ## Zero test
-At the bottom of the helix, the lowest position the black king will sit bis adjacent to a corridor that white wants to traverse, blocking access. It also blocks a black rook that normally prevents access to a different corridor. Thus which of these corridors white is able to traverse is a zero test. 
+At the bottom of the helix, the lowest position the black king will sit adjacent to a corridor that white wants to traverse, blocking access. It also blocks a black rook that normally prevents access to a different corridor. Thus which of these corridors white is able to traverse is a zero test. 
 
 It is undefined behavior for a Minsky machine to decrement a counter below zero, and they can be constructed such that this will never happen. So we don't need to consider how to handle such a case in the construction.
 
 ![Zero test](./ztest.png)
 This image shows the zero-test lines, as well as the relative positions of the virtual rooks to constrain black's helix movement from below and white's ring movement from above.
-The grey wool blocks are pawns, one of which is pinned offscreen, as a minute detail to route the zero-test lines around the required vertical virtual rooks.
+The grey wool blocks are pawns, one of which is pinned offscreen by a bishop, as a minute detail to route the zero-test lines around the required vertical virtual rooks.
 
 
 ## Conclusion
@@ -210,9 +210,9 @@ Knights aren't needed in the setup, though an alternative setup with knight towe
 ## Unresolved questions
 I repeat the unanswered questions presented in the original blog post, with some of my own commentary
 
-- Is 3D chess TC with different subsets of pieces? It's possible with KRPB and KRPN.
+- Is 3D chess TC with different subsets of pieces? It's possible with KRPB and probably KRPN.
 - Is 3D chess TC when each side has only one king? That makes constraining piece movement harder. Perhaps soft-pins can be used that threaten allowing a piece (such as a queen) to escape and go cause a checkmate.
 - Is 2D chess TC? With finitely many pieces, I don't know. For regular positions that can repeat patterns infinitely in certain ways, I attempt a proof [here](/2d-reg-oneking/main.md). There ae some potential ideas for constructing a similar setup to this with finite pieces, in particular to create counters by constraining a black king to a zigzag pattern using bishops.
 - Can anything be done with the notion of having infinitely many choices? This is used to construct "mate-in-omega" positions, where white has a win but not in any finite number of moves. In theory, this could be used to prove a stronger statement than turing completeness, namely that every statement in first-order Peano arithmetic can be encoded as a 3D chess position. The original blog conjectures that this is true, but is tricky. It easy to inject finite choices for either side into the state machine (white can choose to go down one of two paths, or black can choose to block white's access to one of two paths), allowing an *Alternating Turing Machine* to be constructed, but this doesn't translate to an infinite choice (say you can allow black to keep incrementing a counter until they choose to stop. They could just never choose to stop, so this doesn't translate to "choosing an arbitrary integer"). 
 But, say if black was able to move a rook arbitrarily far upwards at the start of the game. If white could get a rook above black's, pinning it, and somehow these rooks were prevented from capturing each other (say this is done twice and the rooks involved now defend each other?), then white's rook could constrain the maximum height of a counter down to black's original choice. With the above mentioned finite black choice state they can increment this counter up to their original choice but not higher or else they lose. This would thus encode black choosing a true arbitrary natural number. 
-However, sufficiently constraining this setup to not break the rest of the system and allow the rooks complete freedom seems tricky. 
+However, sufficiently constraining this setup to not break the rest of the system and allow the rooks complete freedom seems tricky. There's a good chance it is possible though.

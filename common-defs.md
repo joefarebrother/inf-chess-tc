@@ -5,7 +5,7 @@ A strategy is a **winning strategy** if it wins against *all* opposing strategie
 (a weaker notion in which you only must win against all *computable* strategies can be considered; and the difference is meaningful for some infinite chess positions. [TODO: reference]. this notion wil not be considered here.)
 
 For a system to be "Turing complete" is not a very precise concept especially when there's no notion of the system "running by itself". 
-Typically what is meant is "some interesting question about the system is undecidable (via reduction to the halting problem)"
+Typically what is meant is "some interesting question about the system is undecidable" (via reduction to the halting problem)
 For infinite chess, this question will be "Does white have a (computable) winning strategy?"
 
 I will aim to prove the following strongest reasonable definition for TC:
