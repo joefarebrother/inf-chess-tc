@@ -22,4 +22,4 @@ Chess rules:
 - you win when you capture any opposing king. there can be multiple kings per side.
 - for simplicity, check and checkmate are removed from win conditions (and are just shorthand for "threatens a win in 1" and "has an unstoppable win in 1")
 - stalemate can also be removed, no legal moves = you lose. 
-- these modifications to check, checkmate, and stalemate don't actually affect the results. positions are constructed to always have a legal move that doesn't put one in check so the stalemate rule is actually irrelevant.
+- these modifications to check, checkmate, and stalemate don't actually affect the results. positions are constructed to always have a legal move that doesn't put one in check so the stalemate rule is actually irrelevant. 
