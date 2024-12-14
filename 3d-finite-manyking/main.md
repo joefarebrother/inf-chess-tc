@@ -139,8 +139,13 @@ During an increment or decrement operation, white will move their rooks and blac
 ![Helix](./helix_mc.png) ![Helix with attacking lines](./helix_mc_atklines.png)
 Top shows the helix, bottom also shows relevant attacking lines constraining the black king.
 
+tesseract pointed out that there are a few spots at the corners where black can move the king off of the intended helix. However, if they do that, they're no longer defended by a bishop, so white can move their yellow rooks to chase it down and either checkmate it or force it back onto the helix.
+
+It may be simpler to add a few more rooks though to ensure this can't happen in the first place. The original blog had 4 rooks per helix arm.
+
 ## Bishop column
 Here is a 2D cross-section of the bishop column. 
+
 ![Bishop column](./bishop-tower.png)
 
 The rooks in the red columns, as well as black's rook, are actually virtual rooks.
